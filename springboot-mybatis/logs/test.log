@@ -1,0 +1,14 @@
+2020-09-20 18:23:29, 674 [main] INFO  org.spring.springboot.Application - Starting Application on LAPTOP-DPBCIKVV with PID 19164 (E:\dataJava\src\springboot-learning-example\springboot-mybatis\target\classes started by NoOne in E:\dataJava\src\springboot-learning-example\springboot-mybatis)
+2020-09-20 18:23:29, 682 [main] INFO  org.spring.springboot.Application - No active profile set, falling back to default profiles: default
+2020-09-20 18:23:32, 498 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-09-20 18:23:32, 511 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-09-20 18:23:32, 512 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2020-09-20 18:23:32, 523 [main] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_221\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;E:\Oracle\product\11.2.0\dbhome_1\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\Java\jdk1.8.0_221\bin;E:\MySQL\mysql-8.0.17-winx64\bin;E:\dataJava\lib\apache-maven-3.3.9\bin;E:\software\Git\Git\cmd;E:\software\Nodejs\;C:\Users\NoOne\AppData\Local\Microsoft\WindowsApps;C:\Users\NoOne\AppData\Local\BypassRuntm;C:\Users\NoOne\AppData\Local\Microsoft\WindowsApps;;E:\software\VSCode\Microsoft VS Code\bin;C:\Users\NoOne\AppData\Roaming\npm;.]
+2020-09-20 18:23:32, 666 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-09-20 18:23:33, 616 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-09-20 18:23:33, 683 [main] INFO  org.spring.springboot.Application - Started Application in 4.486 seconds (JVM running for 5.334)
+2020-09-20 18:23:38, 378 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-20 18:23:38, 414 [http-nio-8080-exec-1] INFO  org.spring.springboot.service.impl.CityServiceImpl - =====>Enter Servie
+2020-09-20 18:23:38, 434 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-09-20 18:23:39, 652 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-09-20 18:24:07, 770 [http-nio-8080-exec-2] INFO  org.spring.springboot.service.impl.CityServiceImpl - =====>Enter Servie

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Object Detection Demo</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+    </script>
+</head>
+
+<body>
+    <h4>Please chose an image to process object detection</h4>
+    <input id="browse_file" type="file" accept="image/*" onchange="showImg(this)"/>
+    <button id="detect_click" onclick="detectImg()">detect</button>
+    <div id="main" style="width:100%;">
+        <div id="left" style="width:50%;float:left;">
+            <p>origal image</p>
+            <img id="origal_img" src="" alt="" width="" height="">
+        </div>
+        <div id="right" style="width:50%;float:left;">
+            <p>detected image</p>
+            <img id="detected_img" src="" alt="" width="" height="">
+        </div>
+    </div>
+
+    <script>
+        function detectImg() {
+            console.log("object detection start...");
+            var file=$('#browse_file')[0].files[0];
+            var formData=new FormData();    
+            formData.append('file', file);  //属性名称必须和后端接口@RequestParam标记的参数名一致
+            console.log("formData:", formData.get('file'));
+            $.ajax({
+                url : "http://localhost:8080/detectshow/formdata",  
+                type : 'POST',  
+                data : formData,  
+                processData : false,  //必须false才会避开jQuery对 formdata 的默认处理   
+                contentType : false,  //必须false才会自动加上正确的Content-Type
+                success : function(result) {  //jquery请求返回的结果好像都是字符串类型
+                    console.log("reponse result:", result);
+                    var src = 'data:image/png;base64,' + result;
+                    $("#detected_img").attr('src', src);
+                    $("#detected_img").css("width", "70%");
+                    $("#detected_img").css("height", "70%");
+                },  
+                error : function(result) {  
+                    console.log("reponse result:", result);
+                    alert("Post Faile!");
+                }
+            }); 
+            console.log("object detection end!");
+        }
+
+        function showImg(obj) {           //预览图片
+            var file=$(obj)[0].files[0];  //获取文件信息
+            var formData=new FormData();   
+            formData.append('img',file);  //只是前端预览, 属性名称可以随便定义
+            if(file) {
+                var reader=new FileReader();   //调用FileReader
+                reader.readAsDataURL(file);    //将文件读取为 DataURL(base64)
+                reader.onload=function(evt){   //读取操作完成时触发。
+                    $("#origal_img").attr('src', evt.target.result); //将img标签的src绑定为DataURL
+                    $("#origal_img").css('width', "70%");
+                    $("#origal_img").css('height', "70%");
+                };
+            }else {
+                alert("上传失败");
+            }
+        }
+    </script>
+</body>
+</html>

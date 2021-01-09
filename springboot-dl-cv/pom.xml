@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.4.1</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.town.djl</groupId>
+	<artifactId>springboot-dl-cv</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>springboot-dl-cv</name>
+	<description>cv project with Spring Boot and DJL</description>
+
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<!-->以BOM的方式统一管理依赖包的版本<-->
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>ai.djl</groupId>
+				<artifactId>bom</artifactId>
+				<version>0.9.0</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!-->使用djl必须引入的依赖包<-->
+		<dependency>
+			<groupId>ai.djl</groupId>
+			<artifactId>api</artifactId>
+		</dependency>
+		<!-->使用不同的深度学习框架模型引入不同的依赖包, Apache MXNet engine implementation<-->
+		<dependency>
+			<groupId>ai.djl.mxnet</groupId>
+			<artifactId>mxnet-engine</artifactId>
+		</dependency>
+		<!-->使用不同的深度学习框架模型引入不同的依赖包, Apache MXNet native library<-->
+		<dependency>
+			<groupId>ai.djl.mxnet</groupId>
+			<artifactId>mxnet-native-auto</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<!-->使用不同的深度学习框架模型引入不同的依赖包, A ModelZoo containing models exported from Apache MXNet<-->
+		<dependency>
+			<groupId>ai.djl.mxnet</groupId>
+			<artifactId>mxnet-model-zoo</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

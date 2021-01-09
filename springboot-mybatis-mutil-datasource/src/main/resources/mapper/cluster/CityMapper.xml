@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.spring.springboot.dao.cluster.CityDao">
+	<resultMap id="BaseResultMap" type="org.spring.springboot.domain.City">
+		<result column="city_id" property="cityId" />
+		<result column="province_name" property="provinceName" />
+		<result column="city_name" property="cityName" />
+		<result column="description" property="description" />
+	</resultMap>
+
+	<select id="findByName" resultMap="BaseResultMap" parameterType="java.lang.String">
+		SELECT
+			t.city_id,
+			t.city_name,
+			t.province_name,
+			t.description
+		FROM
+			demo_city_t t
+		WHERE
+			1 = 1
+			AND t.city_name = #{cityName}
+	</select>
+
+</mapper>
