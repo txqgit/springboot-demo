@@ -1,0 +1,7 @@
+server:
+  port: 1443 #https端口号.
+  ssl:
+    key-store: classpath:baeldung.p12 #证书的路径.
+    key-store-password: 159357 #证书密码，请修改为您自己证书的密码.
+    key-store-type: PKCS12 #秘钥库类型
+    key-alias: baeldung #证书别名
