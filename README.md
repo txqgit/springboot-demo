@@ -1,5 +1,4 @@
-# springboot-pratice
-springboot练习仓库
+# springboot-learning
 
 1.springboot-dl-cv: 基于SpringBoot和js搭建目标检测丐版应用，实现在上传图片完成检测并展示检测结果
 
