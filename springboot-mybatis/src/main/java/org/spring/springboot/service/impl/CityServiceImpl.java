@@ -20,8 +20,12 @@ public class CityServiceImpl implements CityService {
     private CityDao cityDao;
 
     public City findCityByName(String cityName) {
-        LOG.info("=====>Enter Servie");
-        return cityDao.findByName(cityName);
+        LOG.debug(">>>>>>>>>>Enter Servie");
+        LOG.info(">>>>>>>>>>Enter Servie");
+        LOG.warn(">>>>>>>>>>Enter Servie");
+        LOG.error(">>>>>>>>>>Enter Servie");
+        return new City();
+//        return cityDao.findByName(cityName);
     }
 
 }
