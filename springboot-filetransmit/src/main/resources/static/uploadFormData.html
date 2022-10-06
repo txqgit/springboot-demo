@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload FormData</title>
+</head>
+<body>
+    <form id="Form1" action="http://localhost:8080/rest/form-data" method="post" enctype="multipart/form-data">
+        <div style="text-align: left">
+            ID: <input name="id" type="text" /> <br />
+            ID: <input name="id" type="text" /> <br />
+            Name: <input name="name" type="text" /> <br />
+            Name: <input name="name" type="text" /> <br />
+            Email: <input name="email" type="text" /> <br />
+            Email: <input name="email" type="text" /> <br />
+            File: <input id="1" name="file_excel" type="file" multiple="multiple" /> <br />
+            File: <input id="2" name="file_img" type="file" /> <br />
+            <input type="submit" value="submit" />
+            <input type="reset" value="reset" />
+        </div>
+    </form>
+</body>
+</html>

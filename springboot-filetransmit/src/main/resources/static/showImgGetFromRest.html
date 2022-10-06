@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+    </script>
+</head>
+<body>
+    <div id="main" style="width:100%;">
+        <div id="left" style="width:50%;float:left;">
+            <p>base64 image</p>
+            <p><button id="getBase64" onclick="getImgBase64()">获取并展示图片</button> </p>
+            <img id="base64_img" src="" alt="" width="" height="">
+        </div>
+        <div id="right" style="width:50%;float:left;">
+            <p>byte image</p>
+            <img id="byte_img" src="http://localhost:8080/rest/get-img-byte?imageName=github" alt="" width="70%" height="70%">
+        </div>
+    </div>
+
+    <script>
+        function getImgBase64() {
+            $.ajax({
+                url : "http://localhost:8080/rest/get-img-code?imageName=github",
+                type : 'GET',
+                contentType : false,  //必须false才会自动加上正确的Content-Type
+                success : function(result) {  //jquery请求返回的结果好像都是字符串类型
+                    console.log("reponse result:", result);
+                    var src = 'data:image/png;base64,' + result;
+                    $("#base64_img").attr('src', src);
+                    $("#base64_img").css("width", "70%");
+                    $("#base64_img").css("height", "70%");
+                },
+                error : function(result) {
+                    console.log("reponse result:", result);
+                    alert("Post Faile!");
+                }
+            });
+        }
+    </script>
+</body>
+</html>
