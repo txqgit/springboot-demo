@@ -5,12 +5,11 @@ import ai.djl.translate.TranslateException;
 import com.town.djl.cv.domain.DetectResultVO;
 import com.town.djl.cv.service.CVService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.*;
+import java.io.IOException;
 import java.util.List;
 
 @Controller
@@ -33,4 +32,10 @@ public class CVController {
         return cvService.objectDetectShowFormData(file);
     }
 
+    @CrossOrigin
+    @ResponseBody
+    @RequestMapping(value = "/test", method=RequestMethod.POST)
+    public String Test(@RequestParam("file") MultipartFile file) {
+        return "Test POST API successfully!";
+    }
 }
